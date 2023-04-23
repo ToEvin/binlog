@@ -1,0 +1,11 @@
+com.insistingon.binlog
+com.insistingon.binlog.config
+com.insistingon.binlog.distributed
+com.insistingon.binlog.event
+com.insistingon.binlog.event.handler
+com.insistingon.binlog.event.lifecycle
+com.insistingon.binlog.event.parser
+com.insistingon.binlog.event.parser.converter
+com.insistingon.binlog.factory
+com.insistingon.binlog.position
+com.insistingon.binlog.tablemeta

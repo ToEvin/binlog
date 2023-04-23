@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.insistingon.binlog</groupId>
+        <artifactId>mirattery-binlog</artifactId>
+        <version>1.0.19</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mirattery-binlogportal-spring-boot-starter</artifactId>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <skipTests>true</skipTests>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.insistingon.binlog</groupId>
+            <artifactId>mirattery-binlog</artifactId>
+            <version>1.0.19</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>${springboot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.insistingon.binlog</groupId>
+            <artifactId>binlog</artifactId>
+            <version>1.0.19</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>

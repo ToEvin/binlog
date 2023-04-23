@@ -1,0 +1,79 @@
+server:
+  port: 8988
+#显示debug日志信息
+debug: true
+
+#binlogportal:
+#  enable: true # 是否启用autoconfig
+#  distributed-enable: false # 是否启用分布式部署
+#  distributed-redis: # distributed-enable为true时，要提供一个redis作为分布式协调器，最好开启持久化
+#    host: 172.16.100.251:6379
+#    password: mirattery@devlop
+#  position-redis: # 保存binlog position的redis，必须配置，最好开启持久化
+#    host: 172.16.100.251:6379
+#    password: mirattery@devlop
+#  db-config: # 数据库配置，可以有多个，key自定义即可
+#    d1:
+#      host: 172.16.100.251
+#      port: 3306
+#      user-name: root
+#      password: 1qaz@WSX
+#      handler-list: [logEventHandler] # 该数据库使用的事件处理器，名称为spring的bean name
+
+spring:
+  datasource:
+    url: jdbc:mysql://sh-cdb-omb4emqo.sql.tencentcdb.com:58752/mirattery_test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Hongkong
+    username: mirattery_lisearch
+    password: mirattery@mirattery-test^&%778jtf666
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    #binlog配置
+    dbName: mirattery_test
+    host: sh-cdb-omb4emqo.sql.tencentcdb.com
+    port: 58752
+    handler-list: [ logEventHandler ] # 该数据库使用的事件处理器，名称为spring的bean name
+    filter-table: [ biz_brand,biz_index,biz_industry,data_pool ] #监听表名
+    enable: true
+  #    url: jdbc:mysql://sh-cdb-4ctoyg5o.sql.tencentcdb.com:63952/mirattery_test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Hongkong
+  #    username: mirattery_lisearch
+  #    password: mirattery@mirattery-test^&%778jtf666
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    type: com.alibaba.druid.pool.DruidDataSource
+  #    #binlog配置
+  #    dbName: mirattery_pre
+  #    host: sh-cdb-4ctoyg5o.sql.tencentcdb.com
+  #    port: 63952
+  #    handler-list: [ logEventHandler ] # 该数据库使用的事件处理器，名称为spring的bean name
+  #    filter-table: [ biz_brand,biz_index,biz_industry,data_pool ] #监听表名
+  #    enable: true
+  #    dbConfig:
+  #      db2:
+  #        host: sh-cdb-484jmmle.sql.tencentcdb.com
+  #        port: 60017
+  #        username: root
+  #        password: mirattery@2020
+  #        dbName: data_prep
+  #        handler-list: [ logEventHandler ]
+  #        filter-table: [ op_data ]
+  elasticsearch:
+    rest:
+      uris: vm1:9200
+  redis:
+    host: vm1
+    port: 6379
+    #    password: mirattery@devlop
+    jedis:
+      pool:
+        max-active: 100
+        max-idle: 100
+        max-wait: 3000
+    timeout: 3000
+#  redis:
+#    cluster:
+#      nodes: 10.0.1.5:7001,10.0.1.5:7002,10.0.1.5:7003,10.0.1.5:7004,10.0.1.5:7005,10.0.1.5:7006
+#      max-redirects: 3
+
+
+logging:
+  file:
+    path: /var/log/binlogportal
